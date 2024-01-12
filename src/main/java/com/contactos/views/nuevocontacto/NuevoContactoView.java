@@ -11,10 +11,7 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.BeforeEvent;
-import com.vaadin.flow.router.HasUrlParameter;
-import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.*;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -127,7 +124,7 @@ public class NuevoContactoView extends Composite<VerticalLayout> implements HasU
     }
 
     @Override
-    public void setParameter(BeforeEvent beforeEvent, String cedula) {
+    public void setParameter(BeforeEvent beforeEvent, @OptionalParameter String cedula) {
         this.cedula=cedula;
         if(cedula!=null){
             tfCedula.setEnabled(false);
